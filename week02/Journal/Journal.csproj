@@ -1,11 +1,30 @@
+using System.Collections.Generic;
 
-<Project Sdk="Microsoft.NET.Sdk">
+public class Journal
+{
+    private List<Entry> entries = new List<Entry>();
 
-  <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>disable</Nullable>
-  </PropertyGroup>
+    public void AddEntry(Entry entry)
+    {
+        entries.Add(entry);
+    }
 
-</Project>
+    public void DisplayEntries()
+    {
+        foreach (var entry in entries)
+        {
+            entry.Display();
+        }
+    }
+
+    public void SaveToFile(string filename)
+    {
+        // Implement file saving logic here
+    }
+
+    public void LoadFromFile(string filename)
+    {
+        // Implement file loading logic here
+    }
+}
+
